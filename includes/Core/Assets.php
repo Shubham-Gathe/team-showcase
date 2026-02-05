@@ -59,4 +59,5 @@ class Assets {
 			'primary_color' => get_option( 'team_showcase_primary_color', '#3498db' ),
 		) );
 	}
+	
 }

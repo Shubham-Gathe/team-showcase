@@ -65,6 +65,11 @@ class Settings {
 			'sanitize_callback' => 'sanitize_hex_color',
 			'default'           => '#3498db',
 		) );
+		register_setting( 'team_showcase_settings_group', 'team_showcase_template', array(
+			'type'              => 'string',
+			'sanitize_callback' => 'sanitize_text_field',
+			'default'           => 'default',
+		) );
 	}
 
 	/**
@@ -98,6 +103,16 @@ class Settings {
 						<td>
 							<input type="text" name="team_showcase_primary_color" value="<?php echo esc_attr( get_option( 'team_showcase_primary_color', '#3498db' ) ); ?>" class="regular-text team-color-picker">
 							<p class="description"><?php esc_html_e( 'Primary color for accents and links.', 'team-showcase' ); ?></p>
+						</td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><?php esc_html_e( 'Select Template', 'team-showcase' ); ?></th>
+						<td>
+							<select name="team_showcase_template">
+								<option value="default" <?php selected( get_option( 'team_showcase_template' ), 'default' ); ?>><?php esc_html_e( 'Default Slider', 'team-showcase' ); ?></option>
+								<option value="modern-grid" <?php selected( get_option( 'team_showcase_template' ), 'modern-grid' ); ?>><?php esc_html_e( 'Modern Grid', 'team-showcase' ); ?></option>
+							</select>
+							<p class="description"><?php esc_html_e( 'Choose the layout template for the team showcase.', 'team-showcase' ); ?></p>
 						</td>
 					</tr>
 				</table>

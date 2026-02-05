@@ -6,9 +6,43 @@
     margin: 40px 0;
 }
 
+/* Reset global WordPress/Theme constraints */
+.team-showcase-container.has-global-padding {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+
+.inner-wrapper {
+    max-width: 1160px;
+    margin: 0px auto;
+    padding: 60px 0px 80px;
+}
+
+/* Force Full Width Breakout */
+.team-showcase-container.template-modern-grid {
+    width: 100vw !important;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+    max-width: none !important;
+    box-sizing: border-box;
+    overflow: hidden;
+    /* Ensure content doesn't overflow the container itself */
+}
+
+/* Fix horizontal scrollbar issue on body */
+body:has(.template-modern-grid) {
+    overflow-x: hidden !important;
+}
+
+:where(.is-layout-constrained)>.team-showcase-container {
+    max-width: none !important;
+}
+
 /* Filter Styling */
 .team-filter-wrapper {
-    margin-bottom: 30px;
     display: flex;
     align-items: center;
     gap: 15px;
@@ -16,7 +50,7 @@
 
 .team-filter-wrapper label {
     font-weight: 600;
-    color: #333;
+    color: #fff;
 }
 
 .team-role-select {
@@ -35,7 +69,8 @@
 
 /* Slider Styling */
 .team-slick-slider {
-    margin: 0 -15px; /* Account for card padding */
+    margin: 0 -15px;
+    /* Account for card padding */
 }
 
 .team-slider-item {
@@ -61,8 +96,13 @@
     background: #2980b9;
 }
 
-.team-slick-slider .slick-prev { left: -50px; }
-.team-slick-slider .slick-next { right: -50px; }
+.team-slick-slider .slick-prev {
+    left: -50px;
+}
+
+.team-slick-slider .slick-next {
+    right: -50px;
+}
 
 .team-slick-slider .slick-dots {
     bottom: -35px;
@@ -73,21 +113,34 @@
     color: #3498db;
 }
 
+.top-heading h2 {
+    color: #fff;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.top-heading {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
 /* Card Styling Adjustments for Slider */
 .team-member-card {
     background: #fff;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
     padding-bottom: 20px;
-    height: 100%; /* Ensure consistent height in slider */
+    height: 100%;
+    /* Ensure consistent height in slider */
 }
 
 .team-member-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
 }
 
 .team-member-image img {
@@ -96,6 +149,7 @@
     object-fit: cover;
     aspect-ratio: 1/1;
     display: block;
+    object-position: top;
 }
 
 .team-member-placeholder {
@@ -147,10 +201,186 @@
 
 /* Hide arrows on small screens if they overlap */
 @media (max-width: 768px) {
-    .team-slick-slider .slick-prev { left: -20px; }
-    .team-slick-slider .slick-next { right: -20px; }
-    
+    .team-slick-slider .slick-prev {
+        left: -20px;
+    }
+
+    .team-slick-slider .slick-next {
+        right: -20px;
+    }
+
     .team-showcase-container {
-        padding: 0 40px; /* Space for arrows */
+        padding: 0 40px;
+        /* Space for arrows */
+    }
+}
+
+/* Modern Grid Template Styles */
+.template-modern-grid,
+.template-modern-grid h2,
+.template-modern-grid h3,
+.template-modern-grid h4,
+.template-modern-grid p,
+.template-modern-grid a,
+.template-modern-grid span {
+    font-family: sans-serif !important;
+}
+
+.template-modern-grid {
+    background: #0f172a;
+    /* Dark background as in design */
+    padding: 0;
+    color: #fff;
+}
+
+.template-modern-grid .team-modern-grid-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.template-modern-grid .team-modern-featured {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.template-modern-grid .team-modern-featured .team-member-card.featured {
+    background: transparent;
+    box-shadow: none;
+    text-align: left;
+    padding: 0;
+    border-radius: 0px;
+}
+
+.template-modern-grid .featured .team-member-image img {
+    border-radius: 0px;
+    object-fit: cover;
+    height: 100%;
+    object-position: top;
+}
+
+.template-modern-grid .featured .team-member-info {
+    padding: 10px 0 0 0;
+}
+
+.template-modern-grid .featured .team-member-name a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.template-modern-grid .featured .team-member-designation {
+    font-size: 0.9rem;
+    color: #46977a !important;
+    margin: 0;
+    line-height: 11px;
+}
+
+.team-member-bio p {
+    font-size: 0.8rem;
+    line-height: 16px;
+    margin: 5px 0px 0 0;
+}
+
+.template-modern-grid .featured .team-member-bio {
+    color: #94a3b8;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.template-modern-grid .featured .team-member-social {
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.template-modern-grid .featured .team-member-social .social-icon {
+    color: #94a3b8;
+    font-size: 20px;
+}
+
+/* Thumbnails Grid */
+.team-modern-thumbnails {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-content: start;
+}
+
+.template-modern-grid .team-member-card.thumbnail {
+    position: relative;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    border-radius: 00px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.template-modern-grid .thumbnail .team-member-image img {
+    border-radius: 0px;
+    transition: transform 0.3s ease;
+}
+
+.template-modern-grid .thumbnail:hover .team-member-image img {
+    transform: scale(1.05);
+}
+
+.template-modern-grid .thumbnail .team-member-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    padding: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.template-modern-grid .thumbnail:hover .team-member-info {
+    opacity: 1;
+}
+
+.template-modern-grid .thumbnail .team-member-name {
+    color: #fff;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.template-modern-grid .thumbnail .team-member-designation {
+    color: #38bdf8;
+    font-size: 0.75rem;
+    margin: 5px 0 0 0;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.team-member-image.large {
+    max-width: 250px;
+    width: 100%;
+    max-height: 260px;
+    height: 100%;
+}
+
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .template-modern-grid .team-modern-grid-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .team-modern-thumbnails {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .team-modern-thumbnails {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .template-modern-grid .featured .team-member-name a {
+        font-size: 1.8rem;
     }
 }
