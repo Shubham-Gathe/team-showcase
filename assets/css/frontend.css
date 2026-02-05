@@ -1,0 +1,156 @@
+/**
+ * Team Showcase Frontend CSS
+ */
+
+.team-showcase-container {
+    margin: 40px 0;
+}
+
+/* Filter Styling */
+.team-filter-wrapper {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.team-filter-wrapper label {
+    font-weight: 600;
+    color: #333;
+}
+
+.team-role-select {
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.team-role-select:focus {
+    border-color: #3498db;
+}
+
+/* Slider Styling */
+.team-slick-slider {
+    margin: 0 -15px; /* Account for card padding */
+}
+
+.team-slider-item {
+    padding: 15px;
+    outline: none;
+}
+
+/* Slick Theme Overrides */
+.team-slick-slider .slick-prev,
+.team-slick-slider .slick-next {
+    width: 40px;
+    height: 40px;
+    background: #3498db;
+    border-radius: 50%;
+    z-index: 10;
+    transition: background 0.3s;
+}
+
+.team-slick-slider .slick-prev:hover,
+.team-slick-slider .slick-next:hover,
+.team-slick-slider .slick-prev:focus,
+.team-slick-slider .slick-next:focus {
+    background: #2980b9;
+}
+
+.team-slick-slider .slick-prev { left: -50px; }
+.team-slick-slider .slick-next { right: -50px; }
+
+.team-slick-slider .slick-dots {
+    bottom: -35px;
+}
+
+.team-slick-slider .slick-dots li button:before {
+    font-size: 10px;
+    color: #3498db;
+}
+
+/* Card Styling Adjustments for Slider */
+.team-member-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    padding-bottom: 20px;
+    height: 100%; /* Ensure consistent height in slider */
+}
+
+.team-member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+.team-member-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    display: block;
+}
+
+.team-member-placeholder {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background: #f0f0f0;
+}
+
+.team-member-info {
+    padding: 20px;
+}
+
+.team-member-name {
+    margin: 0 0 5px 0;
+    font-size: 1.25rem;
+    color: #333;
+}
+
+.team-member-designation {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.team-member-bio {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.team-member-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.team-member-social .social-icon {
+    text-decoration: none;
+    color: #888;
+    transition: color 0.2s ease;
+}
+
+.team-member-social .social-icon:hover {
+    color: #333;
+}
+
+/* Hide arrows on small screens if they overlap */
+@media (max-width: 768px) {
+    .team-slick-slider .slick-prev { left: -20px; }
+    .team-slick-slider .slick-next { right: -20px; }
+    
+    .team-showcase-container {
+        padding: 0 40px; /* Space for arrows */
+    }
+}

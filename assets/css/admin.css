@@ -1,0 +1,16 @@
+/**
+ * Admin CSS for Team Showcase
+ */
+
+.column-photo {
+    width: 60px;
+}
+
+.column-photo img {
+    border-radius: 4px;
+    display: block;
+}
+
+.column-role {
+    width: 15%;
+}
