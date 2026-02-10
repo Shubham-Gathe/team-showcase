@@ -76,7 +76,7 @@ class Shortcode {
 					) ORDER BY meta_value ASC",
 					'_team_member_designation'
 				) );
-				set_transient( 'team_showcase_unique_roles', $roles, HOUR_IN_SECONDS );
+				set_transient( 'team_showcase_unique_roles', $roles, 60 * 60 * 1 );
 			}
 
 			$template_type = get_option( 'team_showcase_template', 'default' );

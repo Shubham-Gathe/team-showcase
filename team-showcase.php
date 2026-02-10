@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: Team Showcase
- * Plugin URI:  https://github.com/Subham-Gathe/team-showcase
+ * Plugin URI:  https://github.com/Shubham-Gathe/team-showcase
  * Description: A powerful and easy-to-use team showcase plugin for WordPress, built with modern PHP standards.
  * Version:     1.2.0
- * Author:      Subham Gate
- * Author URI:  https://github.com/Subham-Gathe
+ * Author:      Shubham Gate
+ * Author URI:  https://github.com/Shubham-Gathe
  * Text Domain: team-showcase
  * License:     GPL2
  */
